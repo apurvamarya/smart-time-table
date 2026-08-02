@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 /**
  * ---- DATA ----
  * One row per time slot. Each row has a `time` label and an entry
@@ -117,10 +118,37 @@ const TYPE_STYLES = {
   empty: "bg-green-200",
 };
 
-function Cell({ entry }) {
+// "HH:MM" -> minutes since midnight, for easy numeric comparison.
+function toMinutes(hhmm) {
+  const [h, m] = hhmm.split(":").map(Number);
+  return h * 60 + m;
+}
+
+/**
+ * Figures out which (day, row) is "now", based on the real system clock.
+ * Returns { day, time } of the active row, or null if nothing is active
+ * (weekend, or outside 9:10–4:00).
+ */
+function getActiveSlot(now) {
+  const dayName = now.toLocaleDateString("en-US", { weekday: "long" });
+  if (!DAYS.includes(dayName)) return null; // weekend
+
+  const nowMinutes = now.getHours() * 60 + now.getMinutes();
+
+  const activeRow = TIMETABLE_DATA.find(
+    (row) => nowMinutes >= toMinutes(row.start) && nowMinutes < toMinutes(row.end)
+  );
+  if (!activeRow) return null; // outside 9:10–4:00, or in an unlisted gap
+
+  return { day: dayName, time: activeRow.time };
+}
+
+function Cell({ entry, isActive }) {
   return (
     <td
-      className={`border border-black px-2 py-3 text-center align-middle text-sm sm:text-base ${TYPE_STYLES[entry.type]}`}
+      className={`border px-2 py-3 text-center align-middle text-sm sm:text-base transition-colors ${
+        TYPE_STYLES[entry.type]
+      } ${isActive ? "border-4 border-red-600 relative z-10" : "border-black"}`}
     >
       {entry.text}
     </td>
@@ -128,6 +156,17 @@ function Cell({ entry }) {
 }
 
 export default function Timetable() {
+  const [now, setNow] = useState(new Date());
+
+  // Re-check the clock every 30s — plenty granular for a class schedule,
+  // no need to re-render every second.
+  useEffect(() => {
+    const intervalId = setInterval(() => setNow(new Date()), 30000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const activeSlot = getActiveSlot(now);
+
   return (
     <div className="w-full overflow-x-auto p-4">
       <table className="min-w-[800px] w-full border-collapse border-2 border-black">
@@ -137,7 +176,7 @@ export default function Timetable() {
               colSpan={DAYS.length + 1}
               className="border border-black bg-blue-100 px-2 py-3 text-xl sm:text-2xl font-semibold"
             >
-              Time Table - AI/ML [Sec-D]
+              Time Table
             </th>
           </tr>
           <tr>
@@ -161,7 +200,15 @@ export default function Timetable() {
                 {row.time}
               </th>
               {DAYS.map((day) => (
-                <Cell key={day} entry={row.days[day]} />
+                <Cell
+                  key={day}
+                  entry={row.days[day]}
+                  isActive={
+                    activeSlot !== null &&
+                    activeSlot.day === day &&
+                    activeSlot.time === row.time
+                  }
+                />
               ))}
             </tr>
           ))}

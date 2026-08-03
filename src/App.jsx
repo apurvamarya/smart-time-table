@@ -1,15 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-/**
- * ---- DATA ----
- * One row per time slot. Each row has a `time` label and an entry
- * for every day. Each entry has:
- *   - text: what's displayed in the cell ("" for a blank/empty cell)
- *   - type: "class" | "lunch" | "empty"  (drives the background color)
- *
- * Phase 2 hook: each row also carries `start` / `end` (24hr "HH:MM")
- * so a future "current class" checker can compare against Date.now().
- */
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 const TIMETABLE_DATA = [

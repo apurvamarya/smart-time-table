@@ -20,8 +20,8 @@ const TIMETABLE_DATA = [
     start: "10:05",
     end: "10:55",
     days: {
-      Monday: { text: "", type: "empty" },
-      Tuesday: { text: "", type: "empty" },
+      Monday: { text: "ML  B-220", type: "class" },
+      Tuesday: { text: "ML  B-220", type: "class" },
       Wednesday: { text: "Community B-222", type: "class" },
       Thursday: { text: "Nand B-220", type: "class" },
       Friday: { text: "Coding B-220", type: "class" },
@@ -33,7 +33,7 @@ const TIMETABLE_DATA = [
     end: "11:50",
     days: {
       Monday: { text: "WebDev B-318", type: "class" },
-      Tuesday: { text: "", type: "empty" },
+      Tuesday: { text: "ML  B-220", type: "class" },
       Wednesday: { text: "Nand B-220", type: "class" },
       Thursday: { text: "DBMS D-203", type: "class" },
       Friday: { text: "DBMS B-220", type: "class" },
@@ -60,7 +60,7 @@ const TIMETABLE_DATA = [
       Tuesday: { text: "Lunch", type: "lunch" },
       Wednesday: { text: "DSA B-220", type: "class" },
       Thursday: { text: "Lunch", type: "lunch" },
-      Friday: { text: "", type: "empty" },
+      Friday: { text: "ML  B-220", type: "class" },
     },
   },
   {
@@ -70,9 +70,9 @@ const TIMETABLE_DATA = [
     days: {
       Monday: { text: "Verbal B-220", type: "class" },
       Tuesday: { text: "", type: "empty" },
-      Wednesday: { text: "", type: "empty" },
+      Wednesday: { text: "ML  B-220", type: "class" },
       Thursday: { text: "DBMS B-220", type: "class" },
-      Friday: { text: "", type: "empty" },
+      Friday: { text: "ML  B-220", type: "class" },
     },
   },
   {
@@ -80,7 +80,7 @@ const TIMETABLE_DATA = [
     start: "14:20",
     end: "15:10",
     days: {
-      Monday: { text: "DSA D-201", type: "class" },
+      Monday: { text: "DSA D-101", type: "class" },
       Tuesday: { text: "DBMS B-220", type: "class" },
       Wednesday: { text: "Coding B-220", type: "class" },
       Thursday: { text: "", type: "empty" },
@@ -92,7 +92,7 @@ const TIMETABLE_DATA = [
     start: "15:10",
     end: "16:00",
     days: {
-      Monday: { text: "DSA D-201", type: "class" },
+      Monday: { text: "DSA D-101", type: "class" },
       Tuesday: { text: "Verbal B-208", type: "class" },
       Wednesday: { text: "Coding B-220", type: "class" },
       Thursday: { text: "DSA B-220", type: "class" },

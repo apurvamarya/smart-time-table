@@ -21,7 +21,7 @@ const TIMETABLE_DATA = [
     end: "10:55",
     days: {
       Monday: { text: "ML  B-220", type: "class" },
-      Tuesday: { text: "ML  B-220", type: "class" },
+      Tuesday: { text: "ML  B-209", type: "class" },
       Wednesday: { text: "Community B-222", type: "class" },
       Thursday: { text: "Nand B-220", type: "class" },
       Friday: { text: "Coding B-220", type: "class" },
@@ -33,7 +33,7 @@ const TIMETABLE_DATA = [
     end: "11:50",
     days: {
       Monday: { text: "WebDev B-318", type: "class" },
-      Tuesday: { text: "ML  B-220", type: "class" },
+      Tuesday: { text: "", type: "empty" },
       Wednesday: { text: "Nand B-220", type: "class" },
       Thursday: { text: "DBMS D-203", type: "class" },
       Friday: { text: "DBMS B-220", type: "class" },

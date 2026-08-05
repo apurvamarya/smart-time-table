@@ -70,7 +70,7 @@ const TIMETABLE_DATA = [
     days: {
       Monday: { text: "Verbal B-220", type: "class" },
       Tuesday: { text: "", type: "empty" },
-      Wednesday: { text: "ML  B-220", type: "class" },
+      Wednesday: { text: "ML  B-116", type: "class" },
       Thursday: { text: "DBMS B-220", type: "class" },
       Friday: { text: "ML  B-220", type: "class" },
     },

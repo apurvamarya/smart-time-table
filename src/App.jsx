@@ -59,7 +59,7 @@ const TIMETABLE_DATA = [
     days: {
       Monday: { text: "Lunch", type: "lunch" },
       Tuesday: { text: "Lunch", type: "lunch" },
-      Wednesday: { text: "DSA B-220", type: "class" },
+      Wednesday: { text: "", type: "empty" },
       Thursday: { text: "Lunch", type: "lunch" },
       Friday: { text: "ML  B-220", type: "class" },
     },

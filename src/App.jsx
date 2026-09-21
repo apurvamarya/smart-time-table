@@ -59,7 +59,7 @@ const TIMETABLE_DATA = [
     days: {
       Monday: { text: "Lunch", type: "lunch" },
       Tuesday: { text: "Lunch", type: "lunch" },
-      Wednesday: { text: "", type: "empty" },
+      Wednesday: { text: "Verbal B-220", type: "class" },
       Thursday: { text: "Lunch", type: "lunch" },
       Friday: { text: "ML  B-220", type: "class" },
     },
@@ -82,8 +82,8 @@ const TIMETABLE_DATA = [
     end: "15:10",
     days: {
       Monday: { text: "DSA B-504", type: "class" },
-      Tuesday: { text: "DBMS B-220", type: "class" },
-      Wednesday: { text: "Coding B-220", type: "class" },
+      Tuesday: { text: "Coding B-119", type: "class" },
+      Wednesday: { text: "DSA B-220", type: "class" },
       Thursday: { text: "", type: "empty" },
       Friday: { text: "WebDev B-220", type: "class" },
     },
@@ -94,8 +94,8 @@ const TIMETABLE_DATA = [
     end: "16:00",
     days: {
       Monday: { text: "DSA B-504", type: "class" },
-      Tuesday: { text: "Verbal B-208", type: "class" },
-      Wednesday: { text: "Coding B-220", type: "class" },
+      Tuesday: { text: "Coding B-119", type: "class" },
+      Wednesday: { text: "DBMS B-220", type: "class" },
       Thursday: { text: "DSA B-220", type: "class" },
       Friday: { text: "Nand B-220", type: "class" },
     },

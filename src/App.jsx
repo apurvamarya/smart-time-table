@@ -37,7 +37,7 @@ const TIMETABLE_DATA = [
       Tuesday: { text: "", type: "empty" },
       Wednesday: { text: "Community B-220", type: "class" },
       Thursday: { text: "DBMS B-517", type: "class" },
-      Friday: { text: "DBMS B-220", type: "class" },
+      Friday: { text: "DSA B-220", type: "class" },
     },
   },
   {
